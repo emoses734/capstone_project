@@ -1,0 +1,31 @@
+<!-- First, we need to extend the base, so that the template developed in the base can extend here. -->
+{% extends 'base.html' %}
+
+{% block title %}Analysis{% endblock%}
+
+<!-- This is the content that will be extended into the base -->
+{% block app_content %}
+<!-- WITH statements in jinja2 allow us to set up variables like we do in python, but in jinja2 -->
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 offset-md-1">
+      {{ wtf.quick_form(form) }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md"></div>
+    <div class="col-md">
+      {{ analysis_df|safe}}
+    </div>
+    <div class="col-md"></div>
+  </div>
+  <div class="row">
+    <div class="col-md"></div>
+    <div class="col-md"></div>
+    <div class="col-md"></div>
+  </div>
+</div>
+
+{% endblock %}

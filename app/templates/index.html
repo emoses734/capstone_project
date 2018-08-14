@@ -1,0 +1,35 @@
+
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf%}
+
+{% block title %}
+  Homepage
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+{% endblock %}
+
+{% block app_content%}
+<div id="main" class="row">
+  <div class="col-md-6 offset-md-3">
+    <h3> Text Scraping With Yelp</h3>
+    <p>First, select your city.</p>
+    <div class="row">
+      <div class="col-md  center">
+        <div class="btn btn-primary" onClick="window.location.href='{{url_for('get_city', city='somerville')}}" type='button'>
+          <h4>Somerville</h4>
+        </div>
+      </div>
+      <div class="col-md center">
+        <div class="btn btn-primary" onClick="window.location.href='{{url_for('get_city', city='boston')}}'" type='button'>
+        <h4>Boston</h4>
+        </div>
+      </div>
+    </div>
+<!-- footer -->
+<div class="container-fluid">
+  <div id="footer" class="text-center center-block">
+        <hr>
+</div>
+{% endblock %}
